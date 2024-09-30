@@ -27,7 +27,7 @@
 
   <!-- Navigation bar with links -->
   <div class="w3-bar w3-margin-left w3-white w3-text-black">
-    <h2 class="w3-left w3-tag w3-rio w3-padding-15 w3-round" style="max-width:300px">RORY IN OXFORD</h2>
+    <h2 class="w3-left w3-tag w3-rio w3-padding-15 w3-round" style="font-size: 7.7vw; max-width:70vw">RORY IN OXFORD</h2>
     <a href="https://book.roryinoxford.com/tours" class="w3-hide-small w3-bar-item w3-button w3-mobile w3-medium w3-right w3-margin-right" style="margin-top:10px;">Book Now</a>
     <a href="https://roryinoxford.com/private/" class="w3-hide-small w3-bar-item w3-button w3-mobile w3-medium w3-right w3-margin-right" style="margin-top:10px;">Private Tours</a>
     <a href="https://roryinoxford.com/shared/" class="w3-hide-small w3-bar-item w3-button w3-mobile w3-medium w3-right w3-margin-right" style="margin-top:10px;">Tours</a>
@@ -35,7 +35,7 @@
     <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-medium w3-hide-large w3-margin-right" style="margin-top:10px;" onclick="myFunction()">&#9776;</a>
   </div>
 
-  <div id="header" class="w3-bar-block w3-white w3-hide w3-hide-large w3-small">
+  <div id="demo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-small">
     <a href="https://roryinoxford.com/" class="w3-bar-item w3-button">Home</a>
     <a href="https://roryinoxford.com/shared/" class="w3-bar-item w3-button">Tours</a>
     <a href="https://roryinoxford.com/private/" class="w3-bar-item w3-button">Private Tours</a>
@@ -43,33 +43,36 @@
   </div>
 
   <!-- title page -->
-  <div class="w3-display-container" style="position: relative; height: auto; width: 100%;" alt="The Bridge of Sighs in Oxford, with a building of Hartford College in the background." id="home">
-      <img class="w3-image" src="photos\BoS no chimney enhanced (web).jpg" style="position: relative; height: auto; width: 100%; display: block;" alt="The Bridge of Sighs, in Oxford">
+  <div class="w3-display-container" style="position: relative; height: auto; width: 100%;" id="home">
+      <img class="w3-image" src="photos\BoS no chimney enhanced (web).jpg" style="position: relative; height: auto; width: 100%; display: block;" alt="The Bridge of Sighs in Oxford, with a building of Hartford College in the background.">
         <h1 class="w3-text-white w3-display-left w3-padding-large" style="position: absolute; top: 25%; left: 5%; width: 70%; font-size: 9vw; text-shadow: 1px 1px 2px #4e4949;">
           RORY IN<br> OXFORD</h1>
           <h5 class="w3-text-white w3-padding" style="position: absolute; top: calc(30% - (4vw - 20%)); left: 15vw; font-size: 4vw; max-width: 90%; max-height: 30%; text-align: left; text-shadow: .5px .5px 1px #4e4949;">Unforgettable walking tours, by a graduate of the University of Oxford</h5>
-        <responsive-button class="w3-button w3-round w3-white" style="position: absolute; bottom: 7%; right: 5%; width: 35vw; height: 10vw; padding: 2vw;">
-        <a href="https://book.roryinoxford.com/" style="max-width: 80%; padding: 2vw; text-align: center; font-size: 5vw;">BOOK NOW</a></responsive-button>
+          <responsive-button class="rectangle-transparent-small">
+            <a class="button-text-small" href="https://book.roryinoxford.com/tours">BOOK NOW</a>
+          </responsive-button>
   </div>
       
   <!-- shared tour info page -->
   <div class="w3-display-container" id="shared">
       <img class="w3-image" src="photos\Radcam bright adjust (jpg).jpg" style="width:100%; position: static; display: block;" alt="The outside of the Radcliffe Camera in Oxford. Behind, the sky is blue, with some clouds.">
-        <h1 class="w3-text-white w3-display-right w3-right-align" style="position: absolute; top: 20vw; right: 6vw; font-size: 9vw; text-shadow: 1px 1px 2px #4e4949; max-height: 70vw">OXFORD<br>UNIVERSITY &<br>CITY WALKING<br>TOUR</h1>
+        <h1 class="w3-text-white w3-display-right w3-right-align" style="position: absolute; top: 20vw; right: 6vw; font-size: 9vw; text-shadow: 2px 2px 4px #4e4949; max-height: 70vw">OXFORD<br>UNIVERSITY &<br>CITY WALKING<br>TOUR</h1>
         <h5 class="w3-text-white" style="position: absolute; bottom: 11vw; left: 6%; font-size: 4vw; max-width: 62vw; text-shadow: 1px 1px 2px #4e4949;">Radcliffe Camera, Bodleian Library, Divinity School, Bridge of Sighs, Christ Church, Sheldonian, Merton, University Church, Trinity College, Balliol, Examination Schools, the Saxon Tower, and more...</h5>
-        <responsive-button class="w3-button w3-round w3-display-bottomright w3-white" style="position: absolute; bottom: 7%; right: 5%; width: 35vw; height: 10vw; padding: 2vw;">
-        <a href="https://roryinoxford.com/shared/" style="max-width: 80%; padding: 2vw; text-align: center; font-size: 5vw;">Learn More</a></responsive-button></div>
-  </div>
+        <responsive-button class="rectangle-transparent-small">
+          <a class="button-text-small" href="https://roryinoxford.com/shared">Learn More</a>
+        </responsive-button>
+      </div>
 
   <!-- private tour info page -->
   <div class="w3-display-container" id="private">
       <img class="w3-image" src="photos\Divinity School compressed (jpg).jpg" style="width:100%; position: static; display: block;" alt="The inside of Divinity School, University of Oxford, displaying its intricate faux-fan vault ceiling.">
         <h1 class="w3-text-white w3-center w3-display-topmiddle" style="position: absolute; top: 4vw; font-size: 7vw; text-shadow: 1px 1px 2px #4e4949; width:100%">PRIVATE & BESPOKE<br>OXFORD TOURS</h1>
-        <responsive-button class="w3-button w3-round w3-display-topmiddle w3-white" style="position: absolute; top: 34%; width: 28vw; height: 8vw; padding: 2vw;">
-        <a href="https://roryinoxford.com/shared/" style="max-width: 80%; padding: 2vw; text-align: center; font-size: 4vw;">Learn More</a></responsive-button>
-        <div class="w3-container rectangle w3-display-topmiddle"></div>
+
+        <responsive-button class="rectangle-transparent-small" style="bottom: 33vw; right: 30vw;"><a class="button-text-small" href="https://roryinoxford.com/private">Learn More</a></responsive-button>
+
+        <div class="w3-container rectangle-blue-long w3-display-topmiddle"></div>
         <h5 class="w3-text-white w3-center" style="position: absolute; bottom: 15%; left: 6%; font-size: 5vw; max-width: calc(50% - 16px);">• University & City<br>• Harry Potter<br>• Christian History<br></h5>
-        <h5 class="w3-text-white w3-center" style="position: absolute; bottom: 8%; right: 3%; font-size: 5vw; max-width: 50%;">• C. S. Lewis, Tolkien, and Literature<br>• Prospective Student Tours</h5></div>
+        <h5 class="w3-text-white w3-center" style="position: absolute; bottom: 8%; right: 4vw; font-size: 5vw; max-width: 50%;">• C. S. Lewis, Tolkien, and Literature<br>• Prospective Student Tours</h5></div>
   </div>
 
   <!-- about Rory -->
@@ -103,44 +106,43 @@
     <div class="slideshow-container">
       <div class="mySlides fade">
         <div class="numbertext">1 / 8</div>
-        <div class="w3-text-white caption-text">"Rory was a most delightful and informative guide. He toured us around the key sites of Oxford University, sharing stories of both the history of the university and first hand stories about student life and experience. Thanks for a fantastic tour Rory. We feel privileged to have experienced Oxford through your lived experience".<br><br><b>- Gai and Murray, Google Reviews</b></div>
+        <div class="caption-text">"Rory was a most delightful and informative guide. He toured us around the key sites of Oxford University, sharing stories of both the history of the university and first hand stories about student life and experience. Thanks for a fantastic tour Rory. We feel privileged to have experienced Oxford through your lived experience".<br><br><b>- Gai and Murray, Google Reviews</b></div>
       </div>
 
       <div class="mySlides fade">
         <div class="numbertext">2 / 8</div>
-        <div class="w3-text-white caption-text">"The tour with Rory was one of the highlights of our trip. He was knowledgeable, professional, warm, welcoming - thoroughly engaging. I’d highly recommend spending the time on this tour to get an appreciation of Oxford’s history and legacy".<br><br><b>- Margaret F, TripAdvisor</b></div>
+        <div class="caption-text">"The tour with Rory was one of the highlights of our trip. He was knowledgeable, professional, warm, welcoming - thoroughly engaging. I’d highly recommend spending the time on this tour to get an appreciation of Oxford’s history and legacy".<br><br><b>- Margaret F, TripAdvisor</b></div>
       </div>
 
       <div class="mySlides fade">
         <div class="numbertext">3 / 8</div>
-        <div class="w3-text-white caption-text">"Touring with Rory was amazing!!! As a former student, he had all sorts of wonderful tidbits to share about the University and the city! And, since we wanted to know more about CS Lewis and Tolkien, Rory was more than willing to point us to locations that reflected our interests [...]. We highly recommend touring with Rory- he is just so friendly, knowledgable and kind".<br><br><b>- Gen, TripAdvisor</b></div>
+        <div class="caption-text">"Touring with Rory was amazing!!! As a former student, he had all sorts of wonderful tidbits to share about the University and the city! And, since we wanted to know more about CS Lewis and Tolkien, Rory was more than willing to point us to locations that reflected our interests [...]. We highly recommend touring with Rory- he is just so friendly, knowledgable and kind".<br><br><b>- Gen, TripAdvisor</b></div>
         </div>
 
         <div class="mySlides fade">
           <div class="numbertext">4 / 8</div>
-          <div class="w3-text-white" style="font-size: 2.5vw; text-align: left; max-width: 55%; position: absolute; left: 40%; top: 25%; text-shadow: .5px .5px 1px #4e4949;">"We booked a tour with Rory on incredibly short notice but he was very kind and accommodating. The tour itself was personalized and he had very thoughtful answers to all our questions. We learned so much more with Rory than we would have otherwise and it felt like a much more personal experience being on a small tour rather than one of the large groups you see walking around. Rory gave us a ton of information about the town, the history of the University, and especially the student life and traditions since he’s a recent graduate. All in all this was a wonderful experience and I would recommend Rory’s tours to anyone visiting Oxford!".<br><br><b>- Paige, TripAdvisor</b></div>
+          <div class="caption-text-small">"We booked a tour with Rory on incredibly short notice but he was very kind and accommodating. The tour itself was personalized and he had very thoughtful answers to all our questions. We learned so much more with Rory than we would have otherwise and it felt like a much more personal experience being on a small tour rather than one of the large groups you see walking around. Rory gave us a ton of information about the town, the history of the University, and especially the student life and traditions since he’s a recent graduate. All in all this was a wonderful experience and I would recommend Rory’s tours to anyone visiting Oxford!".<br><br><b>- Paige, TripAdvisor</b></div>
           </div>
           
           <div class="mySlides fade">
           <div class="numbertext">5 / 8</div>
-            <div class="w3-text-white caption-text">"What a fantastic experience!! Rory was warm and welcoming, extraordinarily knowledgeable, thoughtful, professional, and witty. Spending time walking through Oxford was one of the highlights of our trip".<br><br><b>- Margaret, Get Your Guide</b></div>
+            <div class="caption-text">"What a fantastic experience!! Rory was warm and welcoming, extraordinarily knowledgeable, thoughtful, professional, and witty. Spending time walking through Oxford was one of the highlights of our trip".<br><br><b>- Margaret, Get Your Guide</b></div>
             </div>
 
             <div class="mySlides fade">
               <div class="numbertext">6 / 8</div>
-              <div class="w3-text-white caption-text">"Rory was excellent, knowledgeable, and very easy going. Great explanation of the history, the colleges of Oxford. Absolutely recommend a walk about with Rory!"<br><br><b>- Larioja, TripAdvisor</b></div>
+              <div class="caption-text">"Rory was excellent, knowledgeable, and very easy going. Great explanation of the history, the colleges of Oxford. Absolutely recommend a walk about with Rory!"<br><br><b>- Larioja, TripAdvisor</b></div>
             </div>
 
               <div class="mySlides fade">
                 <div class="numbertext">7 / 8</div>
-                <div class="w3-text-white caption-text">"Very entertaining, funny and enlightening. Thank you, Rory for this special tour. Highly recommended".<br><br><b>- Regula, Google Reviews</b></div></div>
+                <div class="caption-text">"Very entertaining, funny and enlightening. Thank you, Rory for this special tour. Highly recommended".<br><br><b>- Regula, Google Reviews</b></div></div>
 
                 <div class="mySlides fade">
                   <div class="numbertext">8 / 8</div>
-                  <div class="w3-text-white" style="font-size: 4vw; text-align: left; max-width: 55%; position: absolute; left: 40%; top: 30%; text-shadow: .5px .5px 1px #4e4949;">Click to see more reviews:<br><br><a href="https://www.tripadvisor.co.uk/Attraction_Review-g186361-d27949743-Reviews-Rory_in_Oxford_Tours_of_Oxford_and_Oxford_University-Oxford_Oxfordshire_England.html"><u>TripAdvisor</u></a><br><a href="https://maps.app.goo.gl/xLTkhy5poemgiequ9"><u>Google Reviews</u></a></div>          
+                  <div class="caption-text-large">Click to see more reviews:<br><br><a href="https://www.tripadvisor.co.uk/Attraction_Review-g186361-d27949743-Reviews-Rory_in_Oxford_Tours_of_Oxford_and_Oxford_University-Oxford_Oxfordshire_England.html"><u>TripAdvisor</u></a><br><a href="https://maps.app.goo.gl/xLTkhy5poemgiequ9"><u>Google Reviews</u></a></div>          
       </div>
-    <responsive-button class="w3-button w3-round w3-display-bottomright w3-white" style="position: absolute; bottom: 7%; right: 5%; width: 40vw; height: 10vw; padding: 2vw;">
-        <a href="https://roryinoxford.com/shared/" style="position: absolute; bottom: 7%; right: 18%; max-width: 80%; padding: 2vw; text-align: center; font-size: 5vw;">Leave a review</a></responsive-button>
+      <a class="rectangle-transparent-small button-text-small" href="https://www.tripadvisor.co.uk/Attraction_Review-g186361-d27949743-Reviews-Rory_in_Oxford_Tours_of_Oxford_and_Oxford_University-Oxford_Oxfordshire_England.html" style="width: 45vw; top: 80vw">Leave a Review</a>
    
     <!-- Next and previous buttons -->
     <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
@@ -163,15 +165,15 @@
   <div class="w3-display-container" id="Book-Now">
     <img class="w3-image" src="photos\wall pannel.jpg">
     <a div class="rectangle-transparent" style="bottom: 10vw; left: 10%;" href="https://book.roryinoxford.com/tours"></a>
-    <div class="w3-display-middle big-book-text"><a href="https://book.roryinoxford.com/tours">Book Shared Tour</a></div>
+    <div class="w3-display-middle button-text-large"><a href="https://book.roryinoxford.com/tours">Book Shared Tour</a></div>
   </div>
 
     <div class="w3-display-container">
     <img class="w3-image" src="photos\ds pannel.jpg" style="width:100%; position: relative;">
     <a div class="rectangle-transparent" style="bottom: 10vw; left: 10%;" href="https://book.roryinoxford.com/private"></a>
-    <div class="big-book-text w3-display-middle"><a href="https://book.roryinoxford.com/private">Book Private Tour</a></div>
+    <div class="button-text-large w3-display-middle"><a href="https://book.roryinoxford.com/private">Book Private Tour</a></div>
   </div>
-
+<!--end of "book now"-->
     <script src="slideshow-script.js"></script>
 </body>
 
@@ -184,7 +186,5 @@
       <div class="footer-text"><p><a href="https://roryinoxford.com/contact/">Contact</a></p></div>
     </div>
   </footer>
-
-
-</body>
+  
 </html>
