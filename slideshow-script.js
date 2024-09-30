@@ -34,3 +34,20 @@ function myFunction() {
     x.className = x.className.replace(" w3-show", "");
   }
 }
+
+document.querySelectorAll('.toggleButton').forEach(button => {
+  button.addEventListener('click', function() {
+      // Get the ID of the target text from the data attribute
+      var targetId = this.getAttribute('data-target');
+      var textElement = document.getElementById(targetId);
+
+      // Toggle the display of the target text element
+      if (textElement.style.display === "none" || textElement.style.display === "") {
+          textElement.style.display = "block";
+          this.textContent = "Read less"; // Change button text to "Read Less"
+      } else {
+          textElement.style.display = "none";
+          this.textContent = "Click to read more"; // Change button text back to "Read More"
+      }
+  });
+});
