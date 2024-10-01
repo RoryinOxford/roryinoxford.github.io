@@ -425,12 +425,10 @@
 
 .rectangle-white-long {
  background-color: #ffff;
- opacity: 0.75;
- width: 92%;
+ width: 100%;
  height: 69%;
- position: absolute;
- top: 4%;
- left: 4%;
+ position: relative;
+ top: 50%;
  border-radius:6px;
 }
 
@@ -480,4 +478,57 @@
   cursor: pointer;
   font-size: 4vw;
   color: white;
+}
+
+.input-book {
+  border: none;
+  border-bottom: 2px solid #ccc;
+  margin-left: 5vw;
+  margin-right: 5vw;
+  transition: border-bottom 0.3s ease;
+  max-width: 90%;
+  font-size: 3vw;
+}
+
+.input-book[type="text"] {
+  outline: none;
+}
+
+.input-book[type="text"]:focus {
+
+  border-bottom: 3px solid #b0a475;
+}
+
+.input-book-checkbox[type="checkbox"] {
+  appearance: none; 
+  width: 4vw;
+  height: 4vw;
+  border: 2px solid #ccc; 
+  border-radius: 50%; 
+  position: relative;
+  cursor: pointer;
+  transition: border 0.3s ease;
+  outline: none; 
+  margin-left: 5vw;
+}
+
+.input-book-checkbox[type="checkbox"]:checked {
+  border: 2px solid #b0a475; 
+}
+
+.input-book-checkbox[type="checkbox"]:checked::before {
+  content: ''; 
+  width: 2vw;
+  height: 2vw;
+  background-color: #b0a475; 
+  border-radius: 50%; 
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.checkbox-label-text {
+  color: black; 
+  font-size: 3vw;
 }
