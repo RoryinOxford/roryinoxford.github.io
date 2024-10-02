@@ -26,24 +26,28 @@
     
     <script src="slideshow-script.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-<script type="text/javascript">
-  (function() {
-  emailjs.init({
-  publicKey: 'Zehg_LVgf9xkHyuFr',})
-})(); </script>
-
-<script type="text/javascript">
-  window.onload = function() {
-  document.getElementById('privateform').addEventListener('submit', function(event) {
-    event.preventDefault();
-    emailjs.sendForm('service_y83uc6q', 'template_fwck5v9', this)
-      .then(function(response) {
-        window.location.href = "https://roryinoxford.com/private-submit";
-      }, function(error) {
-        console.error('Failed to send email:', error);  // Log error for debugging
-        alert('Failed to send email. Please try again later.');
-      });  
-</script>
+    <script type="text/javascript">
+        (function() {
+            // https://dashboard.emailjs.com/admin/account
+            emailjs.init({
+              publicKey: "Zehg_LVgf9xkHyuFr",
+            });
+        })();
+    </script>
+    <script type="text/javascript">
+        window.onload = function() {
+            document.getElementById('contact-form').addEventListener('submit', function(event) {
+                event.preventDefault();
+                // these IDs from the previous steps
+                emailjs.sendForm('service_y83uc6q', 'template_fwck5v9', this)
+                    .then(() => {
+                        console.log('SUCCESS!'); window.location.href = "https://roryinoxford.com/private-submit";
+                    }, (error) => {
+                        console.log('FAILED...', error);
+                    });
+            });
+        }
+    </script>
   </head>
 
 <body class="w3-rio" style="margin:0">
@@ -136,7 +140,7 @@
         </div>
         <br><br>
         <input type="hidden" name="_next" value="https:/roryinoxford.com/private-submit">
-        <input type="button" value="Submit" id="submit" style="background-color: #95874d; border: none; border-radius: 6px; color: white; width: 40%; padding-top: 3%; padding-bottom: 3%; position: absolute; left: 55%; font-size: 4vw; cursor: pointer;">
+        <input type="submit" value="Submit" id="submit" style="background-color: #95874d; border: none; border-radius: 6px; color: white; width: 40%; padding-top: 3%; padding-bottom: 3%; position: absolute; left: 55%; font-size: 4vw; cursor: pointer;">
         
         <br><br><br>
     </form><br>
