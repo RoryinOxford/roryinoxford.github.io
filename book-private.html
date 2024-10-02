@@ -123,9 +123,56 @@
     </div>
 
     <script src="slideshow-script.js"></script>
-    <script src="https://smtpjs.com/v3/smtp.js">
-    </script>
-    <script src="email-script.js"></script>
+    
+    <!-- Include the EmailJS library -->
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@2.6.4/dist/email.min.js"></script>
+<script>
+  // Initialize EmailJS with your User ID
+  emailjs.init('Zehg_LVgf9xkHyuFr');  // Replace with your EmailJS user ID
+
+  // Add an event listener for the form submission
+  document.getElementById('submit').addEventListener('click', function(event) {
+    event.preventDefault();  // Prevent the default form submission behavior
+
+    // Get the form data
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const paxNumber = document.getElementById('pax-number').value;
+    const date = document.getElementById('date').value;
+    const time = document.getElementById('time').value;
+    const extra = document.getElementById('extra').value;
+
+    // Collect checkbox values (if checked)
+    const selectedTours = [];
+    document.querySelectorAll('.input-book-checkbox').forEach(checkbox => {
+      if (checkbox.checked) {
+        selectedTours.push(checkbox.value);
+      }
+    });
+
+    // Create template parameters for EmailJS
+    const templateParams = {
+      name: name,
+      email: email,
+      pax_number: paxNumber,
+      date: date,
+      time: time || 'N/A',  // Default to 'N/A' if no time is provided
+      tours: selectedTours.join(', '),  // Join selected tours into a single string
+      extra: extra || 'N/A'  // Default to 'N/A' if no additional requirements are provided
+    };
+
+    // Send the form data using EmailJS
+    emailjs.send('service_y83uc6q', 'template_fwck5v9', templateParams)
+      .then(function(response) {
+        alert('Email successfully sent!');  // Notify user of success
+        window.location.href = "https://roryinoxford.com/private-submit";  // Redirect to thank you page
+      }, function(error) {
+        console.error('Failed to send email:', error);  // Log error for debugging
+        alert('Failed to send email. Please try again later.');
+      });
+  });
+</script>
+
 </body>
 
   <footer class="w3-rio">
