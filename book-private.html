@@ -23,6 +23,7 @@
     p {font-size: 4vw;}
     body {font-family: "Hammersmith One"}
     </style>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
   </head>
 
 <body class="w3-rio" style="margin:0">
@@ -54,7 +55,7 @@
     </div>
 
     <div class="w3-display-container w3-rio w3-margin">
-        <form class="w3-margin" action="https://formsubmit.co/a53c4cda84ec9c05d2c64af1ca542a05" method="post">
+        <form class="w3-margin" action="https://formsubmit.co/a53c4cda84ec9c05d2c64af1ca542a05" method="post" id="privateform">
         <div class="rectangle-white-long"><br>
                 <label for="name"><h2 style="color: black; margin: 5vw">Name:</h2></label>
                 <input class="input-book" type="text" id="name" name="name" placeholder="Your answer" required><br>
@@ -88,19 +89,19 @@
         <br>
         <div class="rectangle-white-long"><br>
             <h2 style="color: black; margin: 5vw">Which tour (or tours) are you interested in?</h2>
-            <input class="input-book-checkbox" type="checkbox" id="private-uni-city" name="private-uni-city" value="Private_University_&_City">
+            <input class="input-book-checkbox" type="checkbox" id="private-uni-city" name="private-uni-city" value="Selected Private University & City">
             <label class="checkbox-label-text" for="private-uni-city"> Oxford University and City</label><br><br>
 
-            <input class="input-book-checkbox" type="checkbox" id="harry-potter" name="harry-potter" value="Harry_Potter">
+            <input class="input-book-checkbox" type="checkbox" id="harry-potter" name="harry-potter" value="Selected Harry Potter">
             <label class="checkbox-label-text" for="harry-potter"> Harry Potter in Oxford</label><br><br>
 
-            <input class="input-book-checkbox" type="checkbox" id="lewis-tolkien" name="lewis-tolkien" value="CS_Lewis_&_Tolkien">
+            <input class="input-book-checkbox" type="checkbox" id="lewis-tolkien" name="lewis-tolkien" value="Selected CS Lewis & Tolkien">
             <label class="checkbox-label-text" for="lewis-tolkien"> C. S. Lewis & Tolkien in Oxford</label><br><br>
 
-            <input class="input-book-checkbox" type="checkbox" id="christian-history" name="christian-history" value="Christian_History">
+            <input class="input-book-checkbox" type="checkbox" id="christian-history" name="christian-history" value="Selected Christian History">
             <label class="checkbox-label-text" for="christian-history"> Oxford Christian History</label><br><br>
 
-            <input class="input-book-checkbox" type="checkbox" id="prospective-student" name="prospective-student" value="Prospective_Student">
+            <input class="input-book-checkbox" type="checkbox" id="prospective-student" name="prospective-student" value="Selected Prospective Student">
             <label class="checkbox-label-text" for="prospective-student"> Prospective Oxford Student Tour</label><br><br>
 
             <input class="input-book-checkbox" type="checkbox" id="custom" name="custom" value="Custom">
@@ -121,8 +122,10 @@
     </form><br>
     </div>
 
-
-  <script src="slideshow-script.js"></script>
+    <script src="slideshow-script.js"></script>
+    <script src="https://smtpjs.com/v3/smtp.js">
+    </script>
+    <script src="email-script.js"></script>
 </body>
 
   <footer class="w3-rio">
