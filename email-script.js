@@ -30,4 +30,5 @@ document.getElementById('privateform').addEventListener('submit', function(event
         } else {
             alert('There was an error sending your message.');
         }
-    })})
+    })
+})
