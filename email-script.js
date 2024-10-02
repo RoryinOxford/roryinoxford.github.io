@@ -21,7 +21,7 @@ document.getElementById('privateform').addEventListener('submit', function(event
         Username: "mittoadoxoniam@gmail.com",
         Password: "RFWrN.D.>7vw2~)",
         To: "roryinoxford@gmail.com",
-        From: mittoadoxoniam@gmail.com,
+        From: "mittoadoxoniam@gmail.com",
         Subject: `New Private Tour Enquiry ${name}`,
         Body: `Name: ${name}<br>Email: ${email}<br>Number of people: ${paxnumber}<br>Date: ${date}<br>Time: ${time}<br>Selected: ${privateunicity}<br>${harrypotter}<br>${lewistolkien}<br>${christianhistory}<br>${prospectivestudent}<br>${custom}<br><br>Additional Information: ${extra}`
     }).then(response => {
@@ -30,4 +30,4 @@ document.getElementById('privateform').addEventListener('submit', function(event
         } else {
             alert('There was an error sending your message.');
         }
-    });
+    })})
