@@ -23,7 +23,27 @@
     p {font-size: 4vw;}
     body {font-family: "Hammersmith One"}
     </style>
-    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    
+    <script src="slideshow-script.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script type="text/javascript">
+  (function() {
+  emailjs.init({
+  publicKey: 'Zehg_LVgf9xkHyuFr',})
+})(); </script>
+
+<script type="text/javascript">
+  window.onload = function() {
+  document.getElementById('privateform').addEventListener('submit', function(event) {
+    event.preventDefault();
+    emailjs.sendForm('service_y83uc6q', 'template_fwck5v9', this)
+      .then(function(response) {
+        window.location.href = "https://roryinoxford.com/private-submit";
+      }, function(error) {
+        console.error('Failed to send email:', error);  // Log error for debugging
+        alert('Failed to send email. Please try again later.');
+      });  
+</script>
   </head>
 
 <body class="w3-rio" style="margin:0">
@@ -71,7 +91,7 @@
         <div class="rectangle-white-long"><br>
             <label for="pax-number"><h2 style="color: black; margin: 5vw">Number of people:</h2></label>
             <h6 style="margin: 5vw;">If you're not sure, please just give a rough estimate.</h6>
-            <input class="input-book" type="text" id="pax-number" name="pax-number" placeholder="Your answer" required><br>
+            <input class="input-book" type="text" id="pax_number" name="pax_number" placeholder="Your answer" required><br>
             <br><br> 
         </div>
         <br>
@@ -116,64 +136,13 @@
         </div>
         <br><br>
         <input type="hidden" name="_next" value="https:/roryinoxford.com/private-submit">
-        <input type="button" value="Submit" onclick="Email.send" id="submit" style="background-color: #95874d; border: none; border-radius: 6px; color: white; width: 40%; padding-top: 3%; padding-bottom: 3%; position: absolute; left: 55%; font-size: 4vw; cursor: pointer;">
+        <input type="button" value="Submit" id="submit" style="background-color: #95874d; border: none; border-radius: 6px; color: white; width: 40%; padding-top: 3%; padding-bottom: 3%; position: absolute; left: 55%; font-size: 4vw; cursor: pointer;">
         
         <br><br><br>
     </form><br>
     </div>
 
-    <script src="slideshow-script.js"></script>
-    
-    <!-- Include the EmailJS library -->
-<script src="https://cdn.jsdelivr.net/npm/emailjs-com@2.6.4/dist/email.min.js"></script>
-<script>
-  // Initialize EmailJS with your User ID
-  emailjs.init({
-  publicKey: 'Zehg_LVgf9xkHyuFr',
-});
-
-  // Add an event listener for the form submission
-  document.getElementById('submit').addEventListener('click', function(event) {
-    event.preventDefault();  // Prevent the default form submission behavior
-
-    // Get the form data
-    const name = document.getElementById('name').value;
-    const email = document.getElementById('email').value;
-    const paxNumber = document.getElementById('pax-number').value;
-    const date = document.getElementById('date').value;
-    const time = document.getElementById('time').value;
-    const extra = document.getElementById('extra').value;
-
-    // Collect checkbox values (if checked)
-    const selectedTours = [];
-    document.querySelectorAll('.input-book-checkbox').forEach(checkbox => {
-      if (checkbox.checked) {
-        selectedTours.push(checkbox.value);
-      }
-    });
-
-    // Create template parameters for EmailJS
-    const templateParams = {
-      name: name,
-      email: email,
-      pax_number: paxNumber,
-      date: date,
-      time: time || 'N/A',  // Default to 'N/A' if no time is provided
-      tours: selectedTours.join(', '),  // Join selected tours into a single string
-      extra: extra || 'N/A'  // Default to 'N/A' if no additional requirements are provided
-    };
-
-    // Send the form data using EmailJS
-    emailjs.send('service_y83uc6q', 'template_fwck5v9', templateParams)
-      .then(function(response) {
-        alert('Email successfully sent!');  // Notify user of success
-        window.location.href = "https://roryinoxford.com/private-submit";  // Redirect to thank you page
-      }, function(error) {
-        console.error('Failed to send email:', error);  // Log error for debugging
-        alert('Failed to send email. Please try again later.');
-      });
-  });
-</script>
+  
 
 </body>
 
