@@ -28,7 +28,6 @@
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script type="text/javascript">
         (function() {
-            // https://dashboard.emailjs.com/admin/account
             emailjs.init({
               publicKey: "Zehg_LVgf9xkHyuFr",
             });
@@ -37,11 +36,11 @@
     <script type="text/javascript">
         window.onload = function() {
             document.getElementById('privateform').addEventListener('submit', function(event) {
-                event.preventDefault();
+                event.preventDefault(); window.location.href = "https://roryinoxford.com/private-submit";
                 // these IDs from the previous steps
                 emailjs.sendForm('service_y83uc6q', 'template_fwck5v9', this)
                     .then(() => {
-                        console.log('SUCCESS!'); window.location.href="https://roryinoxford.com/private-submit";
+                        console.log('SUCCESS!');
                     }, (error) => {
                         console.log('FAILED...', error);
                     });
@@ -93,7 +92,7 @@
         </div>
         <br>
         <div class="rectangle-white-long"><br>
-            <label for="pax-number"><h2 style="color: black; margin: 5vw">Number of people:</h2></label>
+            <label for="pax_number"><h2 style="color: black; margin: 5vw">Number of people:</h2></label>
             <h6 style="margin: 5vw;">If you're not sure, please just give a rough estimate.</h6>
             <input class="input-book" type="text" id="pax_number" name="pax_number" placeholder="Your answer" required><br>
             <br><br> 
