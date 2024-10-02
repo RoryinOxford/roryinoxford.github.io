@@ -55,7 +55,7 @@
     </div>
 
     <div class="w3-display-container w3-rio w3-margin">
-        <form class="w3-margin" action="https://formsubmit.co/a53c4cda84ec9c05d2c64af1ca542a05" method="post" id="privateform">
+        <form class="w3-margin" id="privateform">
         <div class="rectangle-white-long"><br>
                 <label for="name"><h2 style="color: black; margin: 5vw">Name:</h2></label>
                 <input class="input-book" type="text" id="name" name="name" placeholder="Your answer" required><br>
@@ -64,7 +64,7 @@
         <br>
         <div class="rectangle-white-long"><br>
             <label for="email"><h2 style="color: black; margin: 5vw">Email:</h2></label>
-            <input class="input-book" type="text" id="email" name="email" placeholder="Your answer" required><br>
+            <input class="input-book" type="email" id="email" name="email" placeholder="Your answer" required><br>
             <br><br>       
         </div>
         <br>
@@ -118,7 +118,7 @@
 
         <input type="hidden" name="_next" value="https:/roryinoxford.com/private-submit">
 
-        <input type="submit" value="Submit" style="background-color: #95874d; border: none; border-radius: 6px; color: white; width: 40%; padding-top: 3%; padding-bottom: 3%; position: absolute; left: 55%; font-size: 4vw; "><br><br><br>
+        <input type="button" value="Submit" onclick="Email.send" style="background-color: #95874d; border: none; border-radius: 6px; color: white; width: 40%; padding-top: 3%; padding-bottom: 3%; position: absolute; left: 55%; font-size: 4vw; "><br><br><br>
     </form><br>
     </div>
 
