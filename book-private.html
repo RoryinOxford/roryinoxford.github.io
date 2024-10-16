@@ -9,6 +9,30 @@
   })(window,document,'script','dataLayer','GTM-W52KJN6M');</script>
   <!-- End Google Tag Manager -->
 
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script type="text/javascript">
+      (function() {
+          // https://dashboard.emailjs.com/admin/account
+          emailjs.init({
+            publicKey: "Zehg_LVgf9xkHyuFr",
+          });
+      })();
+  </script>
+  <script type="text/javascript">
+      window.onload = function() {
+          document.getElementById('privateform').addEventListener('submit', function(event) {
+              event.preventDefault();
+              // these IDs from the previous steps
+              emailjs.sendForm('service_y83uc6q', 'template_fwck5v9', this)
+                  .then(() => {
+                      console.log('SUCCESS!');
+                  }, (error) => {
+                      console.log('FAILED...', error);
+                  });
+          });
+      }
+  </script>
+
     <title>Private Tours of Oxford and Oxford University: Rory in Oxford</title>
     <meta charset="UTF-8">
     <meta name="description" content="Private Oxford Tours with Oxford Graduate. C S Lewis & Tolkien; Harry Potter; Christian History; Prospective Student">
@@ -133,29 +157,6 @@
     </div>
 
     <script src="slideshow-script.js"></script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-    <script type="text/javascript">
-        (function() {
-            emailjs.init({
-              publicKey: "Zehg_LVgf9xkHyuFr",
-            });
-        })();
-    </script>
-    
-    <script type="text/javascript">
-        window.onload = function() {
-            document.getElementById('privateform').addEventListener('submit', function(event) {
-                event.preventDefault(); window.location.href = "https://roryinoxford.com/private-submit";
-                // these IDs from the previous steps
-                emailjs.sendForm('service_y83uc6q', 'template_fwck5v9', this)
-                    .then(() => {
-                        console.log('SUCCESS!');
-                    }, (error) => {
-                        console.log('FAILED...', error);
-                    });
-            });
-        }
-    </script>
 
 </body>
 
