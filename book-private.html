@@ -19,19 +19,24 @@
       })();
   </script>
   <script type="text/javascript">
-      window.onload = function() {
-          document.getElementById('privateform').addEventListener('submit', function(event) {
-              event.preventDefault();
-              // these IDs from the previous steps
-              emailjs.sendForm('service_y83uc6q', 'template_fwck5v9', this)
-                  .then(() => {
-                      console.log('SUCCESS!');
-                      window.location.href = "https://roryinoxford.com/private-submit";
-                  }, (error) => {
-                      console.log('FAILED...', error);
-                  });
-          });
-      }
+         window.onload = function() {
+        const form = document.getElementById('privateform');
+        const loadingSpinner = document.getElementById('loading-spinner');
+        
+        form.addEventListener('submit', function(event) {
+            event.preventDefault(); 
+            loadingSpinner.style.display = 'block';
+            emailjs.sendForm('service_y83uc6q', 'template_fwck5v9', this)
+                .then(() => {
+                    console.log('SUCCESS!');
+                    loadingSpinner.style.display = 'none';
+                    window.location.href = "https://roryinoxford.com/private-submit";
+                }, (error) => {
+                    console.log('FAILED...', error);
+                    loadingSpinner.style.display = 'none';
+                });
+        });
+    }
   </script>
 
     <title>Private Tours of Oxford and Oxford University: Rory in Oxford</title>
@@ -55,6 +60,7 @@
     h6 {font-family: "Hammersmith one"; font-size: 3vw; color: #4a4a4a;}
     p {font-size: 4vw;}
     body {font-family: "Hammersmith One"}
+    #loading-spinner {position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: rgba(0, 0, 0, 0.5); color: white; padding: 20px; border-radius: 8px;font-size: 18px;z-index: 9999;}
     </style>
   </head>
 
