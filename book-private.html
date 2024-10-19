@@ -19,40 +19,6 @@
       })();
   </script>
 
-<script type="text/javascript">
-    window.onload = function() {
-        // Get the form element
-        const form = document.getElementById('privateform');
-        
-        // Get the loading spinner element
-        const loadingSpinner = document.getElementById('loading-spinner');
-        
-        form.addEventListener('submit', function(event) {
-            event.preventDefault(); // Prevent default form submission
-            
-            // Show the loading spinner
-            loadingSpinner.style.display = 'block';
-            
-            // Send form data using emailjs
-            emailjs.sendForm('service_y83uc6q', 'template_fwck5v9', this)
-                .then(() => {
-                    console.log('SUCCESS!');
-                    
-                    // Hide the spinner after form is submitted successfully
-                    loadingSpinner.style.display = 'none';
-                    
-                    // Redirect to the next page
-                    window.location.href = "https://roryinoxford.com/private-submit";
-                }, (error) => {
-                    console.log('FAILED...', error);
-                    
-                    // Hide the spinner if submission fails
-                    loadingSpinner.style.display = 'none';
-                });
-        });
-    }
-</script>
-
     <title>Private Tours of Oxford and Oxford University: Rory in Oxford</title>
     <meta charset="UTF-8">
     <meta name="description" content="Private Oxford Tours with Oxford Graduate. C S Lewis & Tolkien; Harry Potter; Christian History; Prospective Student">
@@ -74,18 +40,6 @@
     h6 {font-family: "Hammersmith one"; font-size: 3vw; color: #4a4a4a;}
     p {font-size: 4vw;}
     body {font-family: "Hammersmith One"}
-    #loading-spinner {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-    padding: 20px;
-    border-radius: 8px;
-    font-size: 18px;
-    z-index: 9999;
-}
     </style>
   </head>
 
@@ -114,6 +68,10 @@
 
     <img class="w3-image w3-hide-large w3-hide-medium" src="photos\mobile\ds pannel narrow.webp">
     <img class="w3-image w3-hide-small" src="photos\ds pannel narrow.webp">
+
+    <div id="loading-spinner" style="display: none;">
+      <p>Submitting...</p>
+  </div>
 
     <div class="w3-display-container w3-rio w3-margin">
     <h1>Private Tours</h1>
@@ -183,11 +141,44 @@
         </div>
         <br><br>
         <input type="submit" value="Submit" id="submit" style="background-color: #95874d; border: none; border-radius: 6px; color: white; width: 40%; padding-top: 3%; padding-bottom: 3%; position: absolute; left: 55%; font-size: 4vw; cursor: pointer;">
-        <div id="loading-spinner" style="display: none;">
-          <p>Submitting...</p>
-      </div>
+        
         <br><br><br>
-    </form><br>
+    </form>
+    <script type="text/javascript">
+      window.onload = function() {
+          // Get the form and spinner elements
+          const form = document.getElementById('privateform');
+          const loadingSpinner = document.getElementById('loading-spinner');
+  
+          form.addEventListener('submit', function(event) {
+              event.preventDefault(); // Prevent default form submission behavior
+  
+              // Show the loading spinner
+              loadingSpinner.style.display = 'block';
+  
+              // Send form data using EmailJS
+              emailjs.sendForm('service_y83uc6q', 'template_fwck5v9', form)
+                  .then(() => {
+                      console.log('SUCCESS!');
+  
+                      // Hide the loading spinner
+                      loadingSpinner.style.display = 'none';
+  
+                      // Redirect to the next page
+                      window.location.href = "https://roryinoxford.com/private-submit";
+                  }, (error) => {
+                      console.log('FAILED...', error);
+  
+                      // Hide the spinner on failure
+                      loadingSpinner.style.display = 'none';
+  
+                      // Optionally, display an error message to the user
+                      alert('Failed to submit the form. Please try again later.');
+                  });
+          });
+      }
+  </script>
+  <br>
     </div>
 
     <script src="slideshow-script.js"></script>
