@@ -22,9 +22,7 @@ sub{bottom:-0.25em}sup{top:-0.5em}figure{margin:1em 40px}img{border-style:none}
    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
  }
 html,body{line-height:1}html{overflow-x:hidden}
-h1{font-size:36px}h2{font-size:30px}h3{font-size:24px}h4{font-size:20px}h5{font-size:18px}h6{font-size:16px}
-h1,h2,h3,h4,h6{font-family:"Hammersmith One", "Verdana", "Arial", "Trebuchet MS", sans-serif;font-weight:400;margin:10px 0}.w3-wide{letter-spacing:4px}
-h5{font-family:"Indie Flower", "Trebuchet MS", sans-serif;font-weight:400;margin:10px 0}.w3-wide{letter-spacing:4px}
+w3-wide{letter-spacing:4px}
 hr{border:0;border-top:1px solid #eee;margin:20px 0}
 .w3-image{max-width:100%;height:auto}img{vertical-align:middle}a{color:inherit}
 
