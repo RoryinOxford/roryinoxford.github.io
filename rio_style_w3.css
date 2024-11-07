@@ -300,7 +300,7 @@ text-decoration: none
 
 .private-body-left{
  position: absolute; 
- top: 14vw;
+ top: 12vw;
  left: 3.3%;
  padding: 1vw; 
  font-size: 2vw;  
@@ -334,7 +334,8 @@ text-decoration: none
  background-color: #000000;
   width: 100vw;
   margin-top: 0;
-  margin-bottom: 0;  
+  margin-bottom: 0;
+     
 }
 
 .rectangle-blue-long {
