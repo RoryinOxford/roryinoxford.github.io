@@ -5,8 +5,7 @@
     <meta charset="UTF-8">
     <meta name="description" content="Visit and go inside Oxford University. The best Oxford tour, led by recent graduate. Private tours include C S Lewis Harry Potter Christian History Tolkien">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="Expires" content="2592000">
-    <link rel="stylesheet" href="rio_style_w3.css">
+    <link rel="stylesheet" href="/rio_style_w3.css">
     <link rel="icon" type="image/x-icon" href="/photos\favicon.ico">
     <meta name="robots" content="noindex">
     
@@ -14,7 +13,114 @@
       html {
       scroll-behavior: smooth;
     }
+    h1{font-size:36px}h2{font-size:30px}h3{font-size:24px}h4{font-size:20px}h5{font-size:18px}h6{font-size:16px}
+    h1,h2,h3,h4,h6{font-family:"Hammersmith One", "Verdana", "Arial", "Trebuchet MS", sans-serif;font-weight:400;margin:10px 0}.w3-wide{letter-spacing:4px}
+    h5{font-family:"Indie Flower", "Trebuchet MS", sans-serif;font-weight:400;margin:10px 0}
     body {font-family: "Hammersmith One"}
+    * {box-sizing:border-box}
+ /* Slideshow container */
+ .slideshow-container {
+   max-width: 80%;
+   margin-bottom: 0; 
+   padding-bottom: 0;
+ }
+ /* Hide the images by default */
+ .mySlides {
+   display: none;
+ }
+ /* Next & previous buttons */
+ .prev, .next {
+   cursor: pointer;
+   position: absolute;
+   top: 70vw;
+   margin-top: -22px;
+   padding: 16px;
+   color: white;
+   font-weight: bold;
+   font-size: 6vw;
+   transition: 0.6s ease;
+   border-radius: 0 3px 3px 0;
+   user-select: none;
+ }
+ /* Position the "next button" to the right */
+ .next {
+   right: 0;
+   border-radius: 3px 0 0 3px;
+ }
+ /* On hover, add a black background color with a little bit see-through */
+ .prev:hover, .next:hover {
+   background-color: rgba(0,0,0,0.8);
+ }
+ 
+ .caption-text {
+   font-size: 3vw; 
+   text-align: left; 
+   max-width: 55%; 
+   position: absolute; 
+   left: 40%; 
+   top: 26vw;
+   text-shadow: .5px .5px 1px #4e4949;
+   color: white;
+  }
+
+  .caption-text-small {
+    font-size: 2.5vw; 
+    color: white;
+    text-align: left; 
+    max-width: 55%; 
+    position: absolute; 
+    left: 40%; 
+    top: 25vw;
+    text-shadow: .5px .5px 1px #4e4949;
+   }
+
+   .caption-text-large {
+    font-size: 4vw; 
+    text-align: left; 
+    max-width: 55%; 
+    position: absolute; 
+    left: 40%; 
+    top: 30vw;
+    text-shadow: .5px .5px 1px #4e4949;
+    color: white;
+   }
+
+ /* Number text (1/3 etc) */
+ .numbertext {
+   color: #f2f2f2;
+   font-size: 2vw;
+   padding: 8px 12px;
+   position: absolute;
+   top: 20vw;
+   left: 37%;
+ }
+ /* The dots/bullets/indicators */
+ .dot {
+   cursor: pointer;
+   height: 3vw;
+   width: 3vw;
+   margin: 0 2px;
+   background-color: #bbb;
+   border-radius: 50%;
+   display: inline-block;
+   transition: background-color 0.6s ease;
+ }
+ .active, .dot:hover {
+   background-color: #717171;
+ }
+ /* Fading animation */
+ .fade {
+   animation-name: fade;
+   animation-duration: .7s;
+ }
+ 
+ @keyframes fade {
+   from {opacity: .4}
+   to {opacity: 1}
+ }
+ a {
+ text-decoration: none
+ }
     </style>
   </head>
   <body style="margin:0">
@@ -88,14 +194,51 @@
         <span class="dot" onclick="currentSlide(9)"></span>
       </div> 
     </div>
-    <script async>let slideIndex = 1;showSlides(slideIndex);function plusSlides(n) {showSlides(slideIndex += n);}
-        function currentSlide(n) {showSlides(slideIndex = n);}
-        function showSlides(n) {let i;let slides = document.getElementsByClassName("mySlides");let dots = document.getElementsByClassName("dot");if (n > slides.length) {slideIndex = 1}    
+    <script async>let slideIndex = 0;
+      showSlides(slideIndex);
+      autoSlides(); // Start automatic slideshow
+      
+      function plusSlides(n) {
+          showSlides(slideIndex += n);
+      }
+      
+      function currentSlide(n) {
+          showSlides(slideIndex = n);
+      }
+      
+      function showSlides(n) {
+          let i;
+          let slides = document.getElementsByClassName("mySlides");
+          let dots = document.getElementsByClassName("dot");
+      
+          if (n > slides.length) {slideIndex = 1}    
           if (n < 1) {slideIndex = slides.length}
-          for (i = 0; i < slides.length; i++) {slides[i].style.display = "none";}
-          for (i = 0; i < dots.length; i++) {dots[i].className = dots[i].className.replace(" active", "");}
+      
+          for (i = 0; i < slides.length; i++) {
+              slides[i].style.display = "none";  
+          }
+          for (i = 0; i < dots.length; i++) {
+              dots[i].className = dots[i].className.replace(" active", "");
+          }
+      
           slides[slideIndex-1].style.display = "block";  
-          dots[slideIndex-1].className += " active";}
-        function myFunction() {var x = document.getElementById("demo");if (x.className.indexOf("w3-show") == -1) {x.className += " w3-show";} else {x.className = x.className.replace(" w3-show", "");}}</script>
+          dots[slideIndex-1].className += " active";
+      }
+      
+      function autoSlides() {
+          slideIndex++;
+          showSlides(slideIndex);
+          setTimeout(autoSlides, 13000); // Change slide every 13 seconds
+      }
+      
+      function myFunction() {
+          var x = document.getElementById("demo");
+          if (x.className.indexOf("w3-show") == -1) {
+              x.className += " w3-show";
+          } else {
+              x.className = x.className.replace(" w3-show", "");
+          }
+      }
+      </script>
   </body>
   </html>
