@@ -223,54 +223,65 @@
   </div>
   
 </div>
-    <script async>
-    let slideIndex = 0;
-showSlides(slideIndex);
-autoSlides(); // Start the automatic slideshow
+<script async>
+  let slideIndex = 1;
+  let slideTimeout; 
+  showSlides(slideIndex);
+  startAutoSlides(); 
 
-function plusSlides(n) {
-    showSlides(slideIndex += n);
-}
+  function plusSlides(n) {
+      showSlides(slideIndex += n);
+      resetAutoSlides(); 
+  }
 
-function currentSlide(n) {
-    showSlides(slideIndex = n);
-}
+  function currentSlide(n) {
+      showSlides(slideIndex = n);
+      resetAutoSlides(); 
+  }
 
-function showSlides(n) {
-    let i;
-    let slides = document.getElementsByClassName("mySlides");
-    let dots = document.getElementsByClassName("demo");
-    let captionText = document.getElementById("caption");
+  function showSlides(n) {
+      let i;
+      let slides = document.getElementsByClassName("mySlides");
+      let dots = document.getElementsByClassName("demo");
+      let captionText = document.getElementById("caption");
 
-    if (n > slides.length) {slideIndex = 1}    
-    if (n < 1) {slideIndex = slides.length}
+      if (n > slides.length) {slideIndex = 1}    
+      if (n < 1) {slideIndex = slides.length}
 
-    for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
-    }
-    for (i = 0; i < dots.length; i++) {
-        dots[i].className = dots[i].className.replace(" active", "");
-    }
+      for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";
+      }
+      for (i = 0; i < dots.length; i++) {
+          dots[i].className = dots[i].className.replace(" active", "");
+      }
 
-    slides[slideIndex-1].style.display = "block";  
-    dots[slideIndex-1].className += " active";
-    captionText.innerHTML = dots[slideIndex-1].alt;
-}
+      slides[slideIndex-1].style.display = "block";  
+      dots[slideIndex-1].className += " active";
+      captionText.innerHTML = dots[slideIndex-1].alt;
+  }
 
-function autoSlides() {
-    slideIndex++;
-    showSlides(slideIndex);
-    setTimeout(autoSlides, 8000); // Change image every 8 seconds
-}
+  function startAutoSlides() {
+      slideTimeout = setTimeout(() => {
+          slideIndex++;
+          showSlides(slideIndex);
+          startAutoSlides(); // 
+      }, 8000); 
+  }
 
-function myFunction() {
-    var x = document.getElementById("demo");
-    if (x.className.indexOf("w3-show") == -1) {
-        x.className += " w3-show";
-    } else {
-        x.className = x.className.replace(" w3-show", "");
-    }
-}
+  function resetAutoSlides() {
+      clearTimeout(slideTimeout); 
+      startAutoSlides(); 
+  }
+
+  function myFunction() {
+      var x = document.getElementById("demo");
+      if (x.className.indexOf("w3-show") == -1) {
+          x.className += " w3-show";
+      } else {
+          x.className = x.className.replace(" w3-show", "");
+      }
+  }
 </script>
+
   </body>
   </html>
