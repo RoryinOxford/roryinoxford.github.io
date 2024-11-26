@@ -1,0 +1,9 @@
+User-agent: *
+Disallow: /contact.html
+Disallow: /private-submit.html
+Disallow: /review-slideshow.html
+Disallow: /about-rory.html
+Disallow: /book-private.html
+Disallow: /book.html
+Disallow: /private/submit-form.html
+Disallow: /private/lewis-tolkien/photo-slideshow.html
