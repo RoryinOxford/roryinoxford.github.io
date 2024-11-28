@@ -7,3 +7,4 @@ Disallow: /book-private.html
 Disallow: /book.html
 Disallow: /private/submit-form.html
 Disallow: /private/lewis-tolkien/photo-slideshow.html
+Disallow: /photos/shared-photo-slideshow/
