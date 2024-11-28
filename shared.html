@@ -232,6 +232,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!--end of "book now"-->
 <script src="slideshow-script.js"></script>
 <script src="https://fareharbor.com/embeds/api/v1/?autolightframe=yes"></script>
+
 <script> function myFunction() {
   var x = document.getElementById("demo");
   if (x.className.indexOf("w3-show") == -1) {
@@ -240,6 +241,24 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     x.className = x.className.replace(" w3-show", "");
   }
 } 
+</script>
+<script>
+document.querySelectorAll('.toggleButton').forEach(button => {
+  button.addEventListener('click', function() {
+      // Get the ID of the target text from the data attribute
+      var targetId = this.getAttribute('data-target');
+      var textElement = document.getElementById(targetId);
+
+      // Toggle the display of the target text element
+      if (textElement.style.display === "none" || textElement.style.display === "") {
+          textElement.style.display = "block";
+          this.textContent = "Read less"; // Change button text to "Read Less"
+      } else {
+          textElement.style.display = "none";
+          this.textContent = "Click to read more"; // Change button text back to "Read More"
+      }
+  });
+});
 </script>
   </body>
 
