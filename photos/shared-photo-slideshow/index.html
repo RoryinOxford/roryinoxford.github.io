@@ -211,13 +211,13 @@
    
       <img class="demo cursor" src="/photos\lewis-tolkien\slideshow\mobile/bod (2) 3to2.webp" style="width: 600; height: 400;max-width: 16.666%;" loading="lazy" onclick="currentSlide(4)" alt="The incredible Bodleian Library, the main University library in Oxford since the start of the 17th century.">
     
-      <img class="demo cursor" src="/photos\shared-photo-slideshow\mobile\Clarendon building.webp" style="width: 600; height: 400; max-width: 16.666%;" loading="lazy" onclick="currentSlide(5)" alt="The original location of the University Press, the Clarendon Building is an exquisite example of 18th century neoclassical architecture..">
+      <img class="demo cursor" src="/photos\shared-photo-slideshow\mobile\Clarendon building.webp" style="width: 600; height: 400; max-width: 16.666%;" loading="lazy" onclick="currentSlide(5)" alt="The Clarendon Building is an exquisite example of 18th century neoclassical architecture.">
     
       <img class="demo cursor" src="/photos\lewis-tolkien\slideshow\mobile/merton chapel exterior 3to2.webp" style="width:600; height: 400; max-width: 16.666%;" loading="lazy" onclick="currentSlide(6)" alt="The chapel of Merton College is the oldest chapel in Oxford, and one of its most impressive.">
    
       <img class="demo cursor" src="/photos\shared-photo-slideshow\mobile\Sheldonian 3to2.webp" style="width:600; height: 400; max-width: 16.666%;" loading="lazy" onclick="currentSlide(7)" alt="The Sheldonian is ceremonial theatre of the University of Oxford. All graduations take place here.">
     
-      <img class="demo cursor" src="/photos\shared-photo-slideshow\cc-meadow.webp" style="width:600; height: 400; max-width: 16.666%;" loading="lazy" onclick="currentSlide(8)" alt="The towers of Christ Church, in the beautiful scenery of Christ Christ meadow.">
+      <img class="demo cursor" src="/photos\shared-photo-slideshow\mobile\cc-meadow.webp" style="width:600; height: 400; max-width: 16.666%;" loading="lazy" onclick="currentSlide(8)" alt="The towers of Christ Church, in the beautiful scenery of Christ Christ meadow.">
     
   </div>
   
@@ -243,6 +243,7 @@
       let slides = document.getElementsByClassName("mySlides");
       let dots = document.getElementsByClassName("demo");
       let captionText = document.getElementById("caption");
+      let thumbnailContainer = document.querySelector(".row");
 
       if (n > slides.length) {slideIndex = 1}    
       if (n < 1) {slideIndex = slides.length}
@@ -257,6 +258,20 @@
       slides[slideIndex-1].style.display = "block";  
       dots[slideIndex-1].className += " active";
       captionText.innerHTML = dots[slideIndex-1].alt;
+
+      if (thumbnailContainer) {
+        const thumbnail = dots[slideIndex-1];
+        const containerRect = thumbnailContainer.getBoundingClientRect();
+        const thumbnailRect = thumbnail.getBoundingClientRect();
+
+        
+        if (thumbnailRect.left < containerRect.left || thumbnailRect.right > containerRect.right) {
+            thumbnailContainer.scrollBy({
+                left: thumbnailRect.left - containerRect.left - (containerRect.width / 2 - thumbnailRect.width / 2),
+                behavior: "smooth"
+            });
+        }
+    }
   }
 
   function startAutoSlides() {
