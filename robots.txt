@@ -8,4 +8,5 @@ Disallow: /book.html
 Disallow: /private/submit-form.html
 Disallow: /private/lewis-tolkien/photo-slideshow.html
 Disallow: /photos/shared-photo-slideshow/
+Disallow: /personal/
 Disallow: /photos/people-slideshow/index.html
