@@ -62,7 +62,7 @@
   <h6 class="black-bar w3-text-white" style="text-align: center; padding: 3%; font-size: 4.5vw; padding-right:7.5vw">The only C. S. Lewis & Tolkien tour with a University of Oxford Theology graduate.</h6>
   <a class="rectangle-transparent-small w3-hide-small" style="background-color: #a08b35; border-color: black; font-size: 5vw; position:fixed; bottom: 5%; right: 2%; z-index: 5;" href="https://fareharbor.com/embeds/book/roryinoxford/items/586154/?full-items=yes&flow=1278451">Book Now</a>
 
-          <a class="w3-hide-medium w3-hide-large" style="background-color: #a08b35; border-color: black; font-size: 6vw; position:fixed; z-index: 5;
+          <a class="w3-hide-medium w3-hide-large" id="lt-item-floating-button" style="background-color: #a08b35; border-color: black; font-size: 6vw; position:fixed; z-index: 5;
           border-style:solid; border-width:1vw; border-radius:6px;text-align: center; padding: 1.5vw; bottom: 6vw; left:4vw; width: 90vw; height: 10vw; " href="https://fareharbor.com/embeds/book/roryinoxford/items/586154/?full-items=yes&flow=1278451">Book Now</a>
   </div>
   <!--end of 'home'-->
@@ -88,7 +88,7 @@
    </div>
    <!--end of photo slideshow-->
 <!--'Book Now' Pannel-->
-<div class="w3-display-container" style="background-color: #d4ceb5;">
+<div id="lt-button-full-flow" class="w3-display-container" style="background-color: #d4ceb5;">
   <img class="w3-image w3-hide-small" src="/photos/wall pannel.webp" width="2180" height="734" style="position: relative;" alt="" loading="lazy">
   <img class="w3-image w3-hide-large w3-hide-medium" src="/photos/mobile/wall pannel.webp" width="600" height="202" style="position: relative;" alt="" loading="lazy">
   <a class="rectangle-transparent" style="bottom: 10vw; left: 10%; z-index: 3; height: 60%; top: 20%;" href="https://fareharbor.com/embeds/book/roryinoxford/?full-items=yes&flow=1292156"></a>
@@ -263,6 +263,25 @@ document.querySelectorAll('.toggleButton').forEach(button => {
   });
 });
 </script>
+
+<script>
+  window.addEventListener('DOMContentLoaded', () => {
+    const params = new URLSearchParams(window.location.search);
+    if (params.get('lt-full-flow') === 'true') {
+      document.getElementById('lt-button-full-flow')?.click();
+    }
+  });
+</script>
+
+<script>
+  window.addEventListener('DOMContentLoaded', () => {
+    const params = new URLSearchParams(window.location.search);
+    if (params.get('lt-item') === 'true') {
+      document.getElementById('lt-item-floating-button')?.click();
+    }
+  });
+</script>
+
   </body>
   <footer class="w3-rio">
     <div class="footer-text">
